@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.NewContentPage"
+             Title="NewContentPage">
+    <ScrollView>
+        <VerticalStackLayout  Padding="30,0" Spacing="25">
+
+            <Label
+                Text="Bienvenidos a Global Proyectium"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1"
+                Margin="0,50,0,0"/>
+                
+
+            <Label 
+            Text="Registrese y haga parte de nuestra comunidad"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+            <Image Source="proyecto.webp"
+               WidthRequest="250"
+               HeightRequest="310">
+                <Image.Shadow>
+                    <Shadow Brush="Black"
+                        Offset="20,20"
+                        Radius="40"
+                        Opacity="0.8" />
+                </Image.Shadow>
+            </Image>
+
+        <Label
+                Text="Nombre: "
+                FontSize="Subtitle"/>
+
+        <Entry FontSize="10" AnchorY="5" AnchorX="30">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Gray" />
+                                <Setter Property="FontSize" Value="20" />
+                                </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState Name="Focused">
+                            <VisualState.Setters>
+                                <Setter Property="FontSize" Value="15" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState Name="Disabled">
+                            <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState Name="PointerOver">
+                            <VisualState.Setters>
+                                    <Setter Property="FontSize" Value="15" />
+                                    <Setter Property="BackgroundColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </Entry>
+        <Label
+                Text="Correo electronico:"
+                FontSize="Subtitle"
+            />
+
+            <Entry FontSize="10" AnchorY="5" AnchorX="30">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup Name="CommonStates">
+                            <VisualState Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Gray" />
+                                    <Setter Property="FontSize" Value="20" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState Name="Focused">
+                                <VisualState.Setters>
+                                    <Setter Property="FontSize" Value="15" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="White" />
+                                    <Setter Property="FontSize" Value="15" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Entry>
+            <Label
+                Text="Tipo de proyecto"
+                Style="{StaticResource SubHeadline}"
+                Margin="0,50,0,0"
+                />
+
+            <Picker x:Name="picker" Title="Selecciones un proyecto..." FontSize="Small" Margin="0,0,0,50">
+                <Picker.ItemsSource >
+                    <x:Array Type="{x:Type x:String}" >
+                        <x:String>Administracion</x:String >
+                        <x:String>Financiero</x:String>
+                        <x:String>Tecnologico</x:String>
+                        <x:String>Ambiental</x:String>
+                        <x:String>Industrial</x:String>
+                        <x:String>Arquitectura</x:String>
+                        <x:String>Social</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Registrarse"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                BackgroundColor="DodgerBlue"
+                Margin="0,0,0,50"
+                FontSize="14"
+                >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.9" />
+                                    
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="1" />
+                                    <Setter Property="BackgroundColor" Value="Red" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="PointerOver" >
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Red" />
+                                    <Setter Property="FontSize" Value="15" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

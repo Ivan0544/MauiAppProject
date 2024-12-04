@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Login"
+             NavigationPage.HasNavigationBar="False"   >
+    <Grid RowDefinitions=".3*, .7*">
+        <Image Source="project.jpg" Aspect="Fill"/>
+        <Grid BackgroundColor="LightBlue" Opacity=".9" />
+        <Grid ColumnDefinitions="*">
+            <Image Source="proyecto.webp"
+                   HeightRequest="120"
+                   Aspect="AspectFit"
+                   >
+                <Image.Shadow>
+                    <Shadow Brush="Black"
+                        Offset="20,20"
+                        Radius="40"
+                        Opacity="0.8" />
+                </Image.Shadow>
+
+            </Image>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle
+            Margin="-5,-30,-5,-2"
+            CornerRadius="30,30,0,0"
+            Fill="WhiteSmoke"/>
+            <ScrollView>
+            <VerticalStackLayout Margin="30,0,30,0">
+                <Label FontAttributes="Bold" 
+                       FontFamily="bold" 
+                       FontSize="Small"
+                       Text="Welcome to Projectum"
+                       TextColor="DimGray"
+                       HorizontalOptions="Center"
+                       />
+                <Label FontAttributes="Bold"
+                       FontFamily="bold"
+                       Text="Log in to continue"
+                       TextColor="LightGray"
+                       FontSize="Micro"
+                       HorizontalOptions="Center"
+                       />
+                
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="WhiteSmoke"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60"/>
+                    <Image Source="user.png" />
+                    <Entry x:Name="user" 
+                            Grid.Column="1"
+                           Placeholder="Ingrese usuario"
+                           VerticalOptions="Center"/>
+                </Grid>
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="WhiteSmoke"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60"/>
+                    <Image Source="password.png" />
+                    <Entry x:Name="password" 
+                        Grid.Column="1"
+                           IsPassword="True"
+                           Placeholder="Ingrese constraseña"
+                           VerticalOptions="Center"/>
+                </Grid>
+                <Button x:Name="login" 
+                    Margin="50,20,50,0" 
+                        BackgroundColor="CornflowerBlue"
+                        HeightRequest="60"
+                        Text="Login"
+                        TextColor="WhiteSmoke"
+                        Clicked="Login_Clicked"
+                        
+                        />
+
+                <Label Margin="0,20,0,-10" 
+                       HorizontalOptions="Center"
+                       Text="Recuperar contraseña"
+                       TextColor="CornflowerBlue"
+                       TextDecorations="Underline"
+                       />
+                    <Button x:Name="CreateAccount"
+                            Clicked="CreateAccount_Clicked"
+                        Margin="50,30,50,0"
+                            HeightRequest="60"
+                            BackgroundColor="BurlyWood"
+                            Text="Crea tu cuenta"
+                            TextColor="WhiteSmoke"/>
+
+                    <Label Margin="0,60,0,0" 
+                       HorizontalOptions="Center"
+                       Text="&#169;Copyrights Projectum  - MauiApp "
+                       FontSize="Caption" />
+                       
+
+            </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Grid >
+
+
+</ContentPage>

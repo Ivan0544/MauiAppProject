@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Projects"
+             BackgroundColor="WhiteSmoke"
+             >
+
+    <ContentPage.ToolbarItems >
+        <ToolbarItem x:Name="Volver" Text="X" Clicked="Volver_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ScrollView>
+        
+        <StackLayout Padding="10">
+            <Label Text="Administra tus proyecto"  FontSize="Medium" HorizontalOptions="Center" Padding="20"/>
+            <Button Text="Agregar Proyecto" Clicked="OnAddProjectClicked" />
+            <CollectionView x:Name="ProjectsCollectionView" Margin="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItem 
+                                        BackgroundColor="LightGreen"
+                                        IconImageSource="dotnet_bot.png"
+                                        Invoked="SwipeItem_Invoked_Update"
+                                        Text="update"
+                                        />
+                                    <SwipeItem 
+                                        BackgroundColor="LightGray"
+                                        IconImageSource="dotnet_bot.png"
+                                        Invoked="SwipeItem_Invoked_Delete"
+                                        Text="Delete"
+                                        />
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <Frame BackgroundColor="GhostWhite">
+                                
+                                <StackLayout >
+                                    <Label Text="{Binding Id}" FontSize="Medium" FontAttributes="Bold" />
+                                    <Label Text="{Binding ProjectName}" FontSize="Medium" FontAttributes="Bold" />
+                                    <Label Text="{Binding ProjectType}" FontSize="Small" TextColor="MediumBlue" Margin="0,0,0,20" />
+                                <Label Text="Tareas:" FontSize="Small" FontAttributes="Bold" Margin="0,0,0,20"/>
+                                <CollectionView ItemsSource="{Binding Tasks}">
+                                    <CollectionView.ItemTemplate >
+                                            <DataTemplate>
+                                                <StackLayout Orientation="Horizontal" Spacing="10" >
+                                                    <Label Text="{Binding}" FontSize="Body" VerticalTextAlignment="Center"/>
+                                                    <CheckBox IsChecked="False" VerticalOptions="Center"></CheckBox>
+                                                    <Button Clicked="Task_Clicked" CommandParameter="{Binding}" Text="Ver" VerticalOptions="Center" Background="GhostWhite" TextColor="CornflowerBlue" >
+                                                        <VisualStateManager.VisualStateGroups>
+                                                            <VisualStateGroupList>
+                                                                <VisualStateGroup>
+                                                                    <VisualState x:Name="Normal" >
+                                                                        <VisualState.Setters>
+                                                                            <Setter Property="Scale" Value="0.9" />
+                                                                        </VisualState.Setters>
+                                                                    </VisualState>
+                                                                    <VisualState x:Name="PointerOver" >
+                                                                        <VisualState.Setters>
+                                                                            <Setter Property="TextColor" Value="Blue" />
+                                                                            <Setter Property="Scale" Value="1" />
+                                                                        </VisualState.Setters>
+                                                                    </VisualState>
+                                                                </VisualStateGroup>
+                                                            </VisualStateGroupList>
+                                                        </VisualStateManager.VisualStateGroups>
+                                                    </Button>
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                </CollectionView>
+                            </StackLayout>
+                        </Frame>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

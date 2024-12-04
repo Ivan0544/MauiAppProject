@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.UpdateProject">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <!-- Número de Proyecto (Solo lectura, ya que es una propiedad que no se edita) -->
+            <Label Text="Número de Proyecto" FontAttributes="Bold"/>
+            <Entry x:Name="ProjectIdEntry" Placeholder="Ingrese No de proyecto" IsReadOnly="True" />
+
+            <!-- Nombre del Proyecto -->
+            <Label Text="Nombre del Proyecto" FontAttributes="Bold"/>
+            <Entry x:Name="ProjectNameEntry" Placeholder="Ingrese el nombre del proyecto" />
+
+            <!-- Tipo de Proyecto -->
+            <Label Text="Tipo de Proyecto" FontAttributes="Bold"/>
+            <Entry x:Name="ProjectTypeEntry" Placeholder="Ingrese el tipo de proyecto" />
+
+            <!-- Tareas -->
+            <Label Text="Tareas" FontAttributes="Bold"/>
+            <CollectionView x:Name="TasksCollectionView" HeightRequest="150">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*, Auto">
+                            <Label Text="{Binding}" VerticalOptions="Center" Grid.Column="0" />
+                            <Button Text="Eliminar" 
+                                    BackgroundColor="IndianRed" 
+                                    TextColor="White" 
+                                    Clicked="OnRemoveTaskClicked"
+                                    Grid.Column="1" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Agregar tarea -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Entry x:Name="TaskEntry" Placeholder="Ingrese una tarea" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Agregar Tarea" Clicked="OnAddTaskClicked" />
+            </StackLayout>
+
+            <!-- Botones de acción -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Button Text="Salir" Clicked="Salir_Clicked" BackgroundColor="IndianRed"/>
+                <Button Text="Guardar Proyecto" Clicked="OnSaveProjectClicked" BackgroundColor="DarkCyan" TextColor="White"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppProject.CreateTask"
+             Title="CreateTask">
+    <VerticalStackLayout>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+
+                <Label Text="Codigo de proyecto : " FontAttributes="Bold"/>
+                <Entry x:Name="TaskTypeEntry" Text="{Binding projectId}" Placeholder="Ingrese el tipo de proyecto" />
+
+                <Label Text="Codigo de tarea: " FontAttributes="Bold"/>
+                <Entry x:Name="TaskIdEntry" Text="{Binding id}" Placeholder="Ingrese No de proyecto"/>
+
+                <Label Text="Nombre de tarea: " FontAttributes="Bold"/>
+                <Entry x:Name="TaskNameEntry" Text="{Binding nombre}" Placeholder="Ingrese el nombre del proyecto" />
+
+                <Label Text="Asignado a:" FontAttributes="Bold"/>
+                <Entry x:Name="ProjectTypeEntry" Text="{Binding assignTo}" Placeholder="Ingrese el tipo de proyecto" />
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Button Text="Editar" Clicked="SaveTaskClicked" />
+                    <Button Text="Salir" Clicked="Salir_Clicked" BackgroundColor="IndianRed"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

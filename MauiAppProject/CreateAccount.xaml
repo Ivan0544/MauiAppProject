@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.CreateAccount">
+    <Grid RowDefinitions=".3*, .7*">
+        <Image Source="project.jpg" Aspect="Fill"/>
+        <Grid BackgroundColor="LightBlue" Opacity=".9" />
+        <Grid ColumnDefinitions="*">
+            <Image Source="proyecto.webp" 
+                   HeightRequest="120"
+                   Aspect="AspectFit"
+                   >
+                <Image.Shadow>
+                    <Shadow Brush="Black"
+                        Offset="20,20"
+                        Radius="40"
+                        Opacity="0.8" />
+                </Image.Shadow>
+
+            </Image>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle
+            Margin="-5,-30,-5,-2"
+            CornerRadius="30,30,0,0"
+            Fill="WhiteSmoke"/>
+            <ScrollView>
+                <VerticalStackLayout Margin="30,0,30,0">
+                    <Label FontAttributes="Bold" 
+                       FontFamily="bold" 
+                       FontSize="Small"
+                       Text="Crea tu cuenta!"
+                       TextColor="DimGray"
+                       HorizontalOptions="Center"
+                       />
+                    <Label FontAttributes="Bold"
+                       FontFamily="bold"
+                       Text="Ingresa tu informacion"
+                       TextColor="LightGray"
+                       FontSize="Micro"
+                       HorizontalOptions="Center"
+                       />
+
+                    <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                        <RoundRectangle BackgroundColor="WhiteSmoke"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60"/>
+                        <Image Source="user.png" HorizontalOptions="Center"/>
+                        <Entry
+                            Grid.Column="1"
+                           Placeholder="Nombre"
+                           VerticalOptions="Center"/>
+                        
+                    </Grid>
+                    <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                        <RoundRectangle BackgroundColor="WhiteSmoke"
+                                    CornerRadius="10"
+                                    HeightRequest="30"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="30"/>
+                        <Image Source="user.png" HorizontalOptions="Center"/>
+                        <Entry
+                            Grid.Column="1"
+                           Placeholder="Apellido"
+                           VerticalOptions="Center"/>
+
+                    </Grid>
+                    <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                        <RoundRectangle BackgroundColor="WhiteSmoke"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60"/>
+                        <Image Source="user.png" HorizontalOptions="Center"/>
+                        <Entry
+                            Grid.Column="1"
+                           Placeholder="Email"
+                           VerticalOptions="Center"/>
+
+                    </Grid>
+                    <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                        <RoundRectangle BackgroundColor="WhiteSmoke"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60"/>
+                        <Image Source="password.png" HorizontalOptions="Center"/>
+                        <Entry  
+                        Grid.Column="1"
+                           IsPassword="True"
+                           Placeholder="Ingrese constraseña"
+                           VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                        <RoundRectangle BackgroundColor="WhiteSmoke"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60"/>
+                        <Image Source="password.png" HorizontalOptions="Center"/>
+                        <Entry  
+                        Grid.Column="1"
+                           IsPassword="True"
+                           Placeholder="confirme constraseña"
+                           VerticalOptions="Center"/>
+                    </Grid>
+                    <Button 
+                        Margin="50,70,50,0" 
+                        BackgroundColor="CornflowerBlue"
+                        HeightRequest="50"
+                        Text="Crear cuenta"
+                        TextColor="WhiteSmoke"
+                        />
+                    <Button
+                        x:Name="Salir"
+                        Clicked="Salir_Clicked"
+                        Margin="50,30,50,0" 
+                        BackgroundColor="IndianRed"
+                        HeightRequest="50"
+                        Text="Salir"
+                        TextColor="WhiteSmoke"
+                        />
+
+                    <Label Margin="0,60,0,0" 
+                       HorizontalOptions="Center"
+                       Text="&#169;Copyrights Projectum  - MauiApp "
+                       FontSize="Caption" />
+
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Grid>
+    </Grid >
+</ContentPage>
